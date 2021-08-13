@@ -1,6 +1,6 @@
 import { faCheckCircle } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Slide, Table, TableBody, TableCell, TableHead, TableRow } from '@material-ui/core';
+import { CircularProgress, Slide, Table, TableBody, TableCell, TableHead, TableRow } from '@material-ui/core';
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
@@ -19,10 +19,16 @@ const Users = () => {
 
     const data = useSelector(state => state.users);
     console.log(data);
+    const loading = useSelector(state => state.loading)
 
     return (
         <UsersWrapper>
             <h1 className="mb-4">Users</h1>
+
+            {loading ?
+
+                <CircularProgress size={100} />
+                :
             <Table>
                 <TableHead>
                     <TableRow>
@@ -46,7 +52,7 @@ const Users = () => {
                         </Slide>
                     )}
                 </TableBody>
-            </Table>
+                </Table>}
         </UsersWrapper>
     )
 }

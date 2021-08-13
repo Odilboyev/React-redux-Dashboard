@@ -1,6 +1,6 @@
 import { faCheckCircle } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Table, TableBody, TableCell, TableHead, TableRow } from '@material-ui/core';
+import { CircularProgress, Table, TableBody, TableCell, TableHead, TableRow } from '@material-ui/core';
 import React, { useEffect } from 'react'
 import { Fade } from 'react-awesome-reveal';
 import { useDispatch, useSelector } from 'react-redux';
@@ -23,10 +23,16 @@ const Todos = () => {
     }, [])
 
     const data = useSelector(state => state.todos);
+    const loading = useSelector(state => state.loading)
 
     return (
         <TodosWrapper>
             <h1 className="mb-4">Todo</h1>
+
+            {loading ?
+
+                <CircularProgress size={100} />
+                :
             <Table>
                 <TableHead>
                     <TableRow>
@@ -53,7 +59,7 @@ const Todos = () => {
 
                     )}
                 </TableBody>
-            </Table>
+                </Table>}
         </TodosWrapper>
     )
 }

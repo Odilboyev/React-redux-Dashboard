@@ -5,6 +5,8 @@ const initialState = {
     posts: [],
     users: [],
     albums: [],
+    loading: false,
+    error: false
 };
 
 export default initialState

@@ -1,4 +1,4 @@
-import { Box, Card, CardActionArea, CardContent, makeStyles, Slide, Table, TableBody, TableCell, TableHead, TableRow, Typography, Zoom } from '@material-ui/core';
+import { Box, Card, CardActionArea, CardContent, CircularProgress, makeStyles, Slide, Table, TableBody, TableCell, TableHead, TableRow, Typography, Zoom } from '@material-ui/core';
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
@@ -24,11 +24,15 @@ const Posts = () => {
 
     const data = useSelector(state => state.posts);
     console.log(data);
+    const loading = useSelector(state => state.loading)
 
     return (
         <PostsWrapper>
             <h1 className="mb-4">Posts</h1>
+            {loading ?
 
+                <CircularProgress size={100} />
+                :
             <Box display="flex" flexWrap="wrap">
                 {data.map((v, i) =>
                     <Zoom in={data} key={i} timeout={i * 500}  >
@@ -47,7 +51,7 @@ const Posts = () => {
                         </Card>
                     </Zoom>
                 )}
-            </Box>
+                </Box>}
 
         </PostsWrapper>
     )

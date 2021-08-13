@@ -1,4 +1,4 @@
-import { Slide, Table, TableBody, TableCell, TableHead, TableRow } from '@material-ui/core';
+import { CircularProgress, Slide, Table, TableBody, TableCell, TableHead, TableRow } from '@material-ui/core';
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
@@ -16,11 +16,16 @@ const Albums = () => {
     }, [])
 
     const data = useSelector(state => state.albums);
+    const loading = useSelector(state => state.loading)
     console.log(data);
 
     return (
         <UsersWrapper>
-            <h1 className="mb-4">Users</h1>
+            <h1 className="mb-4">Albums</h1>
+            {loading ?
+
+                <CircularProgress size={100} />
+                :
             <Table>
                 <TableHead>
                     <TableRow>
@@ -39,6 +44,7 @@ const Albums = () => {
                     )}
                 </TableBody>
             </Table>
+            }
         </UsersWrapper>
     )
 }
