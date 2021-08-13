@@ -32,9 +32,9 @@ const Dashboard = ({ children }) => {
                 <h1 className="side-title">Sidebar</h1>
                 <hr className="bg-white" />
                 <List component="nav">
-                    {menus.map((v, i) => <li>
+                    {menus.map((v, i) => <li key={i} >
                         <Slide delay={i * 100}>
-                            <Link key={v.to} to={`/dashboard/${v.to}`}
+                            <Link to={`/dashboard/${v.to}`}
                                 className={`${menu === v.to ? "active" : ""}`}>
                                 <ListItem button >
                                     <FontAwesomeIcon icon={v.icon} className="me-2 icon" />

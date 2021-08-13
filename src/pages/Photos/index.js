@@ -31,7 +31,7 @@ const Photos = () => {
 
             <Box display="flex" justifyContent="center" flexWrap="wrap">
                 {data.map((v, i) =>
-                    <Zoom in={data} timeout={i * 500}  >
+                    <Zoom in={data} key={i} timeout={i * 500}  >
                         <Card className={classes.root} >
                             <CardActionArea>
                                 <CardMedia

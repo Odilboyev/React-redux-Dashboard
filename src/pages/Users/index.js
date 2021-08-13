@@ -35,8 +35,8 @@ const Users = () => {
                 </TableHead>
                 <TableBody>
                     {data.map((v, i) =>
-                        <Slide in={data} direction="right" timeout={i * 200}  >
-                            <TableRow key={i}>
+                        <Slide in={data} key={i} direction="right" timeout={i * 200}  >
+                            <TableRow >
                                 <TableCell>{v.id}</TableCell>
                                 <TableCell>{v.name}</TableCell>
                                 <TableCell>{v.company.name}</TableCell>

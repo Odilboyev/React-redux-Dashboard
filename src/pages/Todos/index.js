@@ -38,8 +38,8 @@ const Todos = () => {
                 </TableHead>
                 <TableBody>
                     {data.map((v, i) =>
-                        <Slide in={data} direction="left" timeout={i * 200}  >
-                            <TableRow key={i}>
+                        <Slide in={data} key={i} direction="left" timeout={i * 200}  >
+                            <TableRow >
                                 <TableCell>{v.id}</TableCell>
                                 <TableCell>{v.userId}</TableCell>
                                 <TableCell>{v.title}</TableCell>

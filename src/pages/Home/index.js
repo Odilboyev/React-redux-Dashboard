@@ -19,7 +19,7 @@ const useStyles = makeStyles({
     },
 });
 
-
+const zoomIn = true;
 const Home = () => {
     const classes = useStyles();
     return (
@@ -27,7 +27,7 @@ const Home = () => {
         <HomeWrapper>
             <h1>Cards</h1>
             <Box display="flex" flexWrap="wrap" justifyContent="space-evenly">
-                <Zoom in="true" timeout={800}>
+                <Zoom in={zoomIn} timeout={800}>
                     <Link to="/dashboard/users" color="primary">
                         <Card className={classes.root}>
                             <CardActionArea>
@@ -52,7 +52,7 @@ const Home = () => {
                         </Card>
                     </Link>
                 </Zoom>
-                <Zoom in="true" timeout={1200} >
+                <Zoom in={zoomIn} timeout={1200} >
                     <Link to="/dashboard/todos" color="primary">
                         <Card className={classes.root}>
                             <CardActionArea>
@@ -78,7 +78,7 @@ const Home = () => {
                     </Link>
                 </Zoom>
 
-                <Zoom in="true" timeout={1600} >
+                <Zoom in={zoomIn} timeout={1600} >
                     <Link to="/dashboard/albums" color="primary">
                         <Card className={classes.root}>
                             <CardActionArea>
@@ -104,7 +104,7 @@ const Home = () => {
                     </Link>
                 </Zoom>
 
-                <Zoom in="true" timeout={2000} >
+                <Zoom in={zoomIn} timeout={2000} >
                     <Link to="/dashboard/photos" color="primary">
                         <Card className={classes.root}>
                             <CardActionArea>
@@ -129,7 +129,7 @@ const Home = () => {
                         </Card>
                     </Link>
                 </Zoom>
-                <Zoom in="true" timeout={2400} >
+                <Zoom in={zoomIn} timeout={2400} >
                     <Link to="/dashboard/posts" color="primary">
                         <Card className={classes.root}>
                             <CardActionArea>

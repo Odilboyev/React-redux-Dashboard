@@ -7,7 +7,6 @@ import Dashboards from './pages/Dashboards';
 import React from 'react'
 function App() {
   return (
-    <div className="app">
       <Router>
         <Provider store={store}>
           <Switch>
@@ -15,8 +14,7 @@ function App() {
             <Route path="/dashboard/:menu"> <Dashboards /> </Route>
           </Switch>
         </Provider>
-      </Router>
-    </div>
+    </Router>
 
 
   );
