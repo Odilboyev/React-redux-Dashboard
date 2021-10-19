@@ -5,7 +5,7 @@ const DashboardWrapper = styled.div`
     display: flex;
     .sidebar{
         overflow-x: hidden;
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.80),  rgba(0, 0, 0, 0.40)), url('https://azouaoui-med.github.io/react-pro-sidebar/static/media/bg1.74aaeeb9.jpg');
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.80),  rgba(0, 0, 0, 0.40)), url('https://azouaoui-med.github.io/react-pro-sidebar/static/media/bg2.de0153c5.jpg');
         background-size: cover;
         background-position: top;
         flex-shrink: 0;
